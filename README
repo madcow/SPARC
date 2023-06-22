@@ -1,38 +1,38 @@
 GAS    Game Archive System running on the
 SPARC  Software Preservation Architecture
 
-Written by Leon Krieg. License undetermined.
-Not to be confused with the GNU assembler. This is just
-a public mirror for eventual (I hope) releases. No sources
-right now, just some notes and a rough draft of some goals.
+Written by Leon Krieg <info@madcow.dev>.
 
-A common system to run different types of old systems with
-emulation accuracy, ease of usage, and portability of user
-files and library in mind. Runs on Windows and Linux either
-natively or with SDL2. Maybe it could be compiled as an UWP
-application for Xbox later?
+License undetermined right now. Not to be confused with the
+GNU assembler (If this overwrites your assembler config don't
+write me an angry email). This repository is just a public
+mirror for eventual (I hope) release. No sources until then.
+
+# About the Project
+
+A unified architecture to run different types of old video
+game platforms. Most important are emulation accuracy, ease of
+use and portability of user files and library. Runs on Windows
+and Linux either natively or with SDL2. Maybe it could even run
+as an UWP app for Xbox later?
+
+TODO: Project description.
 
 # General Notes
 
-The goal should be to preserve the hardware that is not
-sold anymore and NOT any software like the BIOS or games.
-The user makes a memory backup of their systems and game
-copies and provide the ROM files for the emulator cores.
+The goal should be to preserve the hardware that is not sold
+anymore and NOT any software like the BIOS or games. The user
+makes a memory backup of their system and game copies and
+provide the ROM files for the emulator core.
 
 Bottom line is: Don't touch intellectual property, not even
 with a 10-foot pole. Don't even look at Mario the wrong way.
 
-Also speaking of GNU assembler I should think about possible
-name conflicts when it comes to the files below. There seem
-to be none?
-
-TODO: Project description.
-
 # Build on Linux
 
-To build and install this project run the following
-commands. gcc and make are required (and sudo might
-be needed to install depending on user permissions).
+To build and install this project run the following commands.
+gcc and make are required (and sudo might be needed to install
+depending on user permissions).
 
   configure
   make && make install
@@ -43,20 +43,20 @@ TODO: Win32 build documentation.
 
 ## Global Files
 
-The settings in /etc/gas.conf are overwritten by local
-user settings. They are only used if there are no user
-files present (and no write access to create them), or
-if the user profile is set to global.
+The settings in /etc/gas.conf are overwritten by local user
+settings. They are only used if there are no user files present
+(and no write access to create them), or if the user profile is
+set to global.
 
   /etc/gas.cfg
   /usr/gas/rom/
 
 ## User Files
 
-Local user files are stored in ~/.local/.share/gas/.
-Saves are packaged together for easier portability but
-can be exported back into the exact same format as on
-real hardware (to write on a memory card).
+Local user files are stored in ~/.local/.share/gas/. Saves are
+packaged together for easier portability but can be exported back
+into the exact same format as on real hardware (to write on a
+memory card for example).
 
   saves.bee
   config.cfg
