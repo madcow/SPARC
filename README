@@ -1,0 +1,89 @@
+GAS    Game Archive System running on the
+SPARC  Software Preservation Architecture
+
+Written by Leon Krieg. License undetermined.
+Not to be confused with the GNU assembler. This is just
+a public mirror for eventual (I hope) releases. No sources
+right now, just some notes and a rough draft of some goals.
+
+A common system to run different types of old systems with
+emulation accuracy, ease of usage, and portability of user
+files and library in mind. Runs on Windows and Linux either
+natively or with SDL2. Maybe it could be compiled as an UWP
+application for Xbox later?
+
+# General Notes
+
+The goal should be to preserve the hardware that is not
+sold anymore and NOT any software like the BIOS or games.
+The user makes a memory backup of their systems and game
+copies and provide the ROM files for the emulator cores.
+
+Bottom line is: Don't touch intellectual property, not even
+with a 10-foot pole. Don't even look at Mario the wrong way.
+
+Also speaking of GNU assembler I should think about possible
+name conflicts when it comes to the files below. There seem
+to be none?
+
+TODO: Project description.
+
+# Build on Linux
+
+To build and install this project run the following
+commands. gcc and make are required (and sudo might
+be needed to install depending on user permissions).
+
+  configure
+  make && make install
+
+TODO: Win32 build documentation.
+
+# File Structure
+
+## Global Files
+
+The settings in /etc/gas.conf are overwritten by local
+user settings. They are only used if there are no user
+files present (and no write access to create them), or
+if the user profile is set to global.
+
+  /etc/gas.cfg
+  /usr/gas/rom/
+
+## User Files
+
+Local user files are stored in ~/.local/.share/gas/.
+Saves are packaged together for easier portability but
+can be exported back into the exact same format as on
+real hardware (to write on a memory card).
+
+  saves.bee
+  config.cfg
+
+No plans to support savestates.
+TODO: File structure documentation.
+
+# Milestones
+
+- Linux X11, ALSA abstraction layer
+- Win32 ASIO, WASAPI, XInput abstraction layer
+- SDL2  cross-platform (maybe Xbox UWP later?)
+- Game Gear + Master System emulation: Z80, VDP, PSG
+- Game Boy (including Color and Advance)
+- NES / SNES
+
+TODO: Milestone documentation.
+
+# Name Alternatives
+
+Possible name alternatives ranging from
+okay to kafkaesque naming territory:
+
+- BEE      Better Emulation Engine
+- GEAR     Game Emulation Architecture
+- PIMPLE   Platform Independent Media Preservation and Legacy Emulator
+- MENIMEM  My Extremly Naive Implementation of Emulators (Eminem might sue)
+- BEEHIVE  Better Emulation Engine for Highly Integrated Virtual Environments
+- REVIVE   Retro Emulator for Vintage Interactive Video Entertainment
+- CASE     Common Architecture for System Emulation
