@@ -82,11 +82,17 @@ okay to kafkaesque naming territory:
 
 - BEE      Better Emulation Engine
 - GEAR     Game Emulation Architecture
-- PIMPLE   Platform Independent Media Preservation and Legacy
-           Emulator
-- REVIVE   Retro Emulator for Vintage Interactive Video
-           Entertainment
-- BEEHIVE  Better Emulation Engine for Highly Integrated Virtual
-           Environments
-- MENIMEM  My Extremly Naive Implementation of Emulators (Eminem
-           might sue)
+- PIMPLE   Platform Independent Media Preservation
+           and Legacy Emulator
+
+- REVIVE   Retro Emulator for Vintage Interactive
+           Video Entertainment
+
+- BEEHIVE  Better Emulation Engine for Highly
+           Integrated Virtual Environments
+
+- MENIMEM  My Extremly Naive Implementation of
+           Emulators (Eminem might sue)
+
+TODO: Stop thinking of stupid names.
+TODO: Documentation.
