@@ -14,13 +14,13 @@ SPARC is an unified emulation architecture. It handles platform
 abstraction, memory management and provides a clean framework for
 common chips (e.g. CPUs, VPDs, PSGs). It is the backend for GAS
 and makes it easier to develop new emulators that will run on
-different operating system.
+different operating systems.
 
 GAS runs on top of SPARC and implements the cores for each gaming
 console. The goal is to emulate as accurately as possible while
 keeping the software simple to use. Things should just work (TM)
 out of the box. That is, as long as the user can provide their
-ROM backups for both BIOS and game.
+ROM backups for both BIOS and games.
 
 An important consideration is portability. Both in the binary
 sense and in regards to how easy it is for the user to migrate
@@ -28,15 +28,15 @@ their files between multiple systems. Savegames and config can
 be stored on a user provided FTP server to keep multiple device
 states synchronized. Savegames are packaged as a single file for
 all emulated systems but can be exported back to a format that
-can be copied to an original storage device (like a memory card).
+can be copied to original storage devices like memory cards.
 
 There will be no savestates or other capabilities that were not
 present on the original hardware. I'm trying to stay as true to
 the real thing as I can.
 
 SPARC runs on Windows and Linux either natively or with SDL2.
-Maybe Android and Xbox UWP will be supported later. Everything
-is written in ANSI C so portability will be fairly easy.
+Maybe ARM for Android and Xbox UWP will be supported later.
+Everything is written in ANSI C so porting should be easy.
 
 # Build on Linux
 
