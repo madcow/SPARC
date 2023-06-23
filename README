@@ -80,7 +80,12 @@ TODO: Milestone documentation.
 Possible name alternatives ranging from
 okay to kafkaesque naming territory:
 
-- BEE      Better Emulation Engine
+- BEE      Better Emulation Engine. 3 letters and can be written
+           hexadecimal as 0xBEE for file signatures. Followed by
+           the type nibble 0-F. The last possible package type is
+           0xBEEF. It's pretty magical and should be the file
+           extension instead of pak.
+
 - GEAR     Game Emulation Architecture
 - PIMPLE   Platform Independent Media Preservation
            and Legacy Emulator
