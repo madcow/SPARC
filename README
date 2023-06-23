@@ -26,9 +26,9 @@ An important consideration is portability. Both in the binary
 sense and in regards to how easy it is for the user to migrate
 their files between multiple systems. Savegames and config can
 be stored on a user provided FTP server to keep multiple device
-states synchronized. They are packaged as a single file for all
-systems but can be exported back to a format that can be copied
-to an original storage device (like a memory card).
+states synchronized. Savegames are packaged as a single file for
+all emulated systems but can be exported back to a format that
+can be copied to an original storage device (like a memory card).
 
 There will be no savestates or other capabilities that were not
 present on the original hardware. I'm trying to stay as true to
@@ -70,8 +70,8 @@ memory card for example).
   saves.bee
   config.cfg
 
-No plans to support savestates.
-TODO: File structure documentation.
+TODO: Improve Linux documentation.
+TODO: Win32 file system documentation.
 
 # Milestones
 
@@ -82,7 +82,7 @@ TODO: File structure documentation.
 ## Game Boy (including Color and Advance)
 ## NES / SNES
 
-TODO: Document each milestone.
+TODO: Document necessary steps for each milestone.
 
 # Name Ideas
 
