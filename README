@@ -5,28 +5,38 @@ Written by Leon Krieg <info@madcow.dev>.
 
 License undetermined right now. Not to be confused with the
 GNU assembler (If this overwrites your assembler config don't
-write me an angry email). This repository is just a public
-mirror for eventual (I hope) release. No sources until then.
+send me an angry email). Sources will be published as soon as
+the first milestones are completed.
 
 # About the Project
 
-A unified architecture to run different types of old video
-game platforms. Most important are emulation accuracy, ease of
-use and portability of user files and library. Runs on Windows
-and Linux either natively or with SDL2. Maybe it could even run
-as an UWP app for Xbox later?
+SPARC is an unified emulation architecture. It handles platform
+abstraction, memory management and provides a clean framework for
+common chips (e.g. CPUs, VPDs, PSGs). It is the backend for GAS
+and makes it easier to develop new emulators that will run on
+different operating system.
 
-TODO: Project description.
+GAS runs on top of SPARC and implements the cores for each gaming
+console. The goal is to emulate as accurately as possible while
+keeping the software simple to use. Things should just work (TM)
+out of the box. That is, as long as the user can provide their
+ROM backups for both BIOS and game.
 
-# General Notes
+An important consideration is portability. Both in the binary
+sense and in regards to how easy it is for the user to migrate
+their files between multiple systems. Savegames and config can
+be stored on a user provided FTP server to keep multiple device
+states synchronized. They are packaged as a single file for all
+systems but can be exported back to a format that can be copied
+to an original storage device (like a memory card).
 
-The goal should be to preserve the hardware that is not sold
-anymore and NOT any software like the BIOS or games. The user
-makes a memory backup of their system and game copies and
-provide the ROM files for the emulator core.
+There will be no savestates or other capabilities that were not
+present on the original hardware. I'm trying to stay as true to
+the real thing as I can.
 
-Bottom line is: Don't touch intellectual property, not even
-with a 10-foot pole. Don't even look at Mario the wrong way.
+SPARC runs on Windows and Linux either natively or with SDL2.
+Maybe Android and Xbox UWP will be supported later. Everything
+is written in ANSI C so portability will be fairly easy.
 
 # Build on Linux
 
@@ -44,9 +54,8 @@ TODO: Win32 build documentation.
 ## Global Files
 
 The settings in /etc/gas.conf are overwritten by local user
-settings. They are only used if there are no user files present
-(and no write access to create them), or if the user profile is
-set to global.
+settings. They provide default configuration values in case the
+user has not defined those values in their local files.
 
   /etc/gas.cfg
   /usr/gas/rom/
@@ -66,25 +75,23 @@ TODO: File structure documentation.
 
 # Milestones
 
-- Linux X11, ALSA abstraction layer
-- Win32 ASIO, WASAPI, XInput abstraction layer
-- SDL2  cross-platform (maybe Xbox UWP later?)
-- Game Gear + Master System emulation: Z80, VDP, PSG
-- Game Boy (including Color and Advance)
-- NES / SNES
+## Linux X11, ALSA abstraction layer
+## Win32 ASIO, WASAPI, XInput abstraction layer
+## SDL2  cross-platform (maybe Xbox UWP later?)
+## Game Gear + Master System emulation: Z80, VDP, PSG
+## Game Boy (including Color and Advance)
+## NES / SNES
 
-TODO: Milestone documentation.
+TODO: Document each milestone.
 
-# Name Alternatives
+# Name Ideas
 
-Possible name alternatives ranging from
-okay to kafkaesque naming territory:
+Other name ideas ranging from neat to kafkaesque territory:
 
-- BEE      Better Emulation Engine. 3 letters and can be written
-           hexadecimal as 0xBEE for file signatures. Followed by
-           the type nibble 0-F. The last possible package type is
-           0xBEEF. It's pretty magical and should be the file
-           extension instead of pak.
+- BEE      Better Emulation Engine. Sweet file extension: 3 letters and
+           can be written in hexadecimal as 0xBEE for file signatures.
+           It is followed by the type nibble 0-F. The last valid package
+           (or first invalid) type would be 0xBEEF. It's pretty magical.
 
 - GEAR     Game Emulation Architecture
 - PIMPLE   Platform Independent Media Preservation
