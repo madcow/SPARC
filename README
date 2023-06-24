@@ -10,6 +10,7 @@ SPARC  Software Preservation Architecture for
 FIRE   Fully Integrated Retro Emulation
 
 Written by Leon Krieg <info@madcow.dev>.
+Repository URL: https://git.sparc.sh
 
 License undetermined right now. Not to be confused with
 GNU assembler (If this overwrites your assembler config
@@ -57,6 +58,13 @@ permissions for the selected prefix).
 
   configure
   make && make install
+
+If you like to live dangerously you can install by
+piping curl into a shell. It's safer to clone from
+git.sparc.sh so preferably do that.
+
+  curl sparc.sh | sh;     # install latest release
+  git clone git.sparc.sh  # clone sources with git
 
 TODO: Win32 build documentation.
 
