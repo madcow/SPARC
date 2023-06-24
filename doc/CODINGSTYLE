@@ -1,0 +1,15 @@
+# Coding Style
+
+- Function blocks start on separate line (K&R)
+- Multi-line comments, no single line from C99
+- Short names for local variables
+- Descriptive names when global variables are necessary
+- Maximum Line width (can be exceeded if helps clarity)
+  - 70 chars for source code
+  - 55 chars for documentation
+- Tabs for indentation, spaces for alignment
+- Tab width in editors should be 8 characters
+- (I put "noremap m :!make<CR>" in my .vimrc and
+  enable the Makefile autorun setting for quick
+  testing from inside the vim editor.)
+- TODO: Coding style
