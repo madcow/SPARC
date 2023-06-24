@@ -6,7 +6,9 @@
  |_____/|_| /_/    \_\_|  \_\\_____|
 
 GAS    Game Archive System running on the
-SPARC  Software Preservation Architecture
+SPARC  Software Preservation Architecture for
+FIRE   Fully Integrated Retro Emulation
+       (I'm really sorry.)
 
 Written by Leon Krieg <info@madcow.dev>.
 
@@ -109,6 +111,7 @@ Other name ideas ranging from neat to kafkaesque:
           be(e) from 0xBEE0 until 0xBEEF. Where do
           bees live? Hexagons. Pretty magical, no?
 
+- FIRE    Fully Integrated Retro Emulation
 - GEAR    Game Emulation Architecture
 
 - PIMPLE  Platform Independent Media Preservation and
