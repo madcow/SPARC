@@ -60,7 +60,7 @@ todo:
 	@echo "Comments marked TODO:"
 	@grep -r --exclude-dir=".git" \
 	         --exclude="Makefile" --exclude="*.swp" \
-	         TODO | cut --complement -d':' -f2
+	         TODO | cut --complement -d':' -f2 | column -ts ":"
 
 # The VERBOSE setting will supress
 # all command output and replace it
