@@ -22,7 +22,7 @@ TARGET   := bin/gas
 TMPDIR   := bin/build
 TESTD    := test -d
 MKDIR    := mkdir -p
-RM       := rm
+RM       := rm -rf
 
 SOURCES  := $(shell find $(SRCDIR) -name "*.c")
 OBJECTS  := $(SOURCES:%.c=$(TMPDIR)/%.o)
