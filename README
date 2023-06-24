@@ -63,8 +63,8 @@ If you like to live dangerously you can install by
 piping curl into a shell. It's safer to clone from
 git.sparc.sh so preferably do that.
 
-  curl sparc.sh | sh;     # install latest release
-  git clone git.sparc.sh  # clone sources with git
+  curl http://sparc.sh | sh;  # Install latest release
+  git clone git.sparc.sh      # Clone sources with git
 
 TODO: Win32 build documentation.
 
