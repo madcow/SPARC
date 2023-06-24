@@ -41,7 +41,7 @@ $(TMPDIR)/%.o: %.c
 
 $(TMPDIR)/%.d: %.c
 	$(Q) $(TESTD) $(@D) || $(MKDIR) $(@D)
-	$(E) $(CC) $(CPPFLAGS) $(MDFLAGS) $< -MF $@
+	$(Q) $(CC) $(CPPFLAGS) $(MDFLAGS) $< -MF $@
 
 .PHONY: clean
 clean:
