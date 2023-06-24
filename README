@@ -62,7 +62,9 @@ TODO: Win32 build documentation.
 
 The settings in /etc/gas.conf are overwritten by local user
 settings. They provide default configuration values in case the
-user has not defined those values in their local files.
+user has not defined those values in their local files (or the
+files do not exist and the program does not have permissions to
+create it).
 
   /etc/gas.cfg
   /usr/gas/rom/
@@ -74,8 +76,9 @@ packaged together for easier portability but can be exported back
 into the exact same format as on real hardware (to write on a
 memory card for example).
 
-  saves.bee
-  config.cfg
+  save.bee
+  conf.cfg
+  rom/
 
 TODO: Improve Linux documentation.
 TODO: Win32 file system documentation.
