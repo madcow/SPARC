@@ -97,9 +97,10 @@ Other name ideas ranging from neat to kafkaesque territory:
 
 - BEE      Better Emulation Engine. Sweet file extension? 3 letters
            and can be written hexadecimal as file signature 0xBEE.
-           It can then be followed by the package type nibble 0-F
-           The last valid package type (or first invalid) would be
-           0xBEEF. It's pretty magical, no?
+           It can then be followed by the package type nibble 0-F.
+           A valid range of file sub types would then be(e) from
+           0xBEE0 until 0xBEEF. It's pretty magical, no?
+
 - GEAR     Game Emulation Architecture
 - PIMPLE   Platform Independent Media Preservation and Legacy Emulator
 - MENIMEM  My Extremly Naive Implementation of Emulators (Eminem might sue)
