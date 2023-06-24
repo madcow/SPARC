@@ -95,14 +95,14 @@ TODO: Document necessary steps for each milestone.
 
 Other name ideas ranging from neat to kafkaesque territory:
 
-- BEE      Better Emulation Engine. Sweet file extension: 3 letters
+- BEE      Better Emulation Engine. Sweet file extension? 3 letters
            and can be written hexadecimal as file signature 0xBEE.
-           It can be followed by the type nibble 0-F to get 32 bit.
-           The last valid package (or first invalid) type would be
-           0xBEEF. It's pretty magical.
+           It can then be followed by the package type nibble 0-F
+           The last valid package type (or first invalid) would be
+           0xBEEF. It's pretty magical, no?
 - GEAR     Game Emulation Architecture
 - PIMPLE   Platform Independent Media Preservation and Legacy Emulator
-- MENIMEM  My Extremly Naive Implementation of Emulators (Eminem may sue)
+- MENIMEM  My Extremly Naive Implementation of Emulators (Eminem might sue)
 
 TODO: Stop thinking of stupid names.
 TODO: Documentation.
