@@ -57,8 +57,10 @@ check: $(TARGET)
 
 .PHONY: todo
 todo:
-	@echo "Entries marked TODO found:"
-	@grep -hr ^TODO #| cut -d ' ' -f2-
+	@echo "Comments marked TODO:"
+	@grep -r --exclude-dir=".git" \
+	         --exclude="Makefile" --exclude="*.swp" \
+	         TODO | cut --complement -d':' -f2
 
 # The VERBOSE setting will supress
 # all command output and replace it

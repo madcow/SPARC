@@ -12,4 +12,4 @@
 - (I put "noremap m :!make<CR>" in my .vimrc and
   enable the Makefile autorun setting for quick
   testing from inside the vim editor.)
-- TODO: Coding style
+- TODO: Coding style.
