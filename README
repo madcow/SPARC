@@ -35,8 +35,8 @@ present on the original hardware. I'm trying to stay as true to
 the real thing as I can.
 
 SPARC runs on Windows and Linux either natively or with SDL2.
-Maybe ARM for Android and Xbox UWP will be supported later.
-Everything is written in ANSI C so porting should be easy.
+Maybe Android and Xbox can be supported later. Porting should
+be fairly straightforward.
 
 # Build on Linux
 
