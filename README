@@ -10,46 +10,49 @@ SPARC  Software Preservation Architecture
 
 Written by Leon Krieg <info@madcow.dev>.
 
-License undetermined right now. Not to be confused with the
-GNU assembler (If this overwrites your assembler config don't
-send me an angry email). Sources will be published as soon as
-the first milestones are completed.
+License undetermined right now. Not to be confused with
+GNU assembler (If this overwrites your assembler config
+don't send me an angry email). Sources are published as
+soon as the first milestones are completed.
 
 # About the Project
 
-SPARC is an unified emulation architecture. It handles platform
-abstraction, memory management and provides a clean framework for
-common chips (e.g. CPUs, VPDs, PSGs). It is the backend for GAS
-and makes it easier to develop new emulators that will run on
-different operating systems.
+SPARC is an unified emulation architecture. It handles
+platform abstraction, memory management and provides a
+clean framework for common chips (CPUs, VPDs, PSGs). It
+is the backend for GAS and streamlines the process of
+creating emulators for different operating systems.
 
-GAS runs on top of SPARC and implements the cores for each gaming
-console. The goal is to emulate as accurately as possible while
-keeping the software simple to use. Things should just work (TM)
-out of the box. That is, as long as the user can provide their
-ROM backups for both BIOS and games.
+GAS runs on top of SPARC and implements the cores for
+each gaming console. Emulation should be as accurate as
+possible while keeping the software simple to use. Most
+things should just work (TM) out of the box as long as
+the user provides their ROM backups for BIOS and games.
 
-An important consideration is portability. Both in the binary
-sense and in regards to how easy it is for the user to migrate
-their files between multiple systems. Savegames and config can
-be stored on a user provided FTP server to keep multiple device
-states synchronized. Savegames are packaged as a single file for
-all emulated systems but can be exported back to a format that
-can be copied to original storage devices like memory cards.
+An important consideration is portability. Both in the
+binary sense and in regards to how easy it is for the
+user to migrate their files between multiple systems.
+Savegames and config can be stored on a user provided
+FTP server to keep multiple device states synchronized.
+Savegames are packaged as a single file for each user
+but can be exported back to a format that can be copied
+to original storage devices like memory cards.
 
-There will be no savestates or other capabilities that were not
-present on the original hardware. I'm trying to stay as true to
-the real thing as I can.
+There will be no savestates or other capabilities that
+were not present on the original hardware. I am trying
+to stay as true to the real thing as I can.
 
-SPARC runs on Windows and Linux either natively or with SDL2.
-Maybe Android and Xbox can be supported later. Porting should
-be fairly straightforward.
+SPARC runs on Windows and Linux either natively or with
+SDL2. Maybe Android and Xbox can be supported later.
+Porting should be fairly straightforward.
 
 # Build on Linux
 
-To build and install this project run the following commands.
-gcc and make are required (and sudo might be needed to install
-depending on user permissions).
+To build and install this project run the following
+commands. gcc and make are required. A different prefix
+can be set by passing --prefix to the configure script.
+(Sudo might be needed to install depending on the user
+permissions for the selected prefix).
 
   configure
   make && make install
@@ -60,21 +63,21 @@ TODO: Win32 build documentation.
 
 ## Global Files
 
-The settings in /etc/gas.conf are overwritten by local user
-settings. They provide default configuration values in case the
-user has not defined those values in their local files (or the
-files do not exist and the program does not have permissions to
-create it).
+The settings in /etc/gas.conf are overwritten by local
+user settings. They provide default config values in
+case the user has not set those values in their local
+file (or the file do not exist and the program does not
+have permissions to create it).
 
   /etc/gas.cfg
   /usr/gas/rom/
 
 ## User Files
 
-Local user files are stored in ~/.local/.share/gas/. Saves are
-packaged together for easier portability but can be exported back
-into the exact same format as on real hardware (to write on a
-memory card for example).
+Local user files are stored in ~/.local/.share/gas/.
+Saves are packaged together for easier portability but
+can be exported back into the exact same format as on
+real hardware (to write on a memory card for example).
 
   save.bee
   conf.cfg
@@ -96,18 +99,23 @@ TODO: Document necessary steps for each milestone.
 
 # Name Ideas
 
-Other name ideas ranging from neat to kafkaesque territory:
+Other name ideas ranging from neat to kafkaesque:
 
-- BEE      Better Emulation Engine. Sweet file extension? 3 letters
-           and can be written hexadecimal as file signature 0xBEE.
-           It can then be followed by the package type nibble 0-F.
-           A valid range of file sub types would then be(e) from
-           0xBEE0 until 0xBEEF. Where do bees live? Hexagons.
-           Pretty magical, no?
+- BEE     Better Emulation Engine. Could be a sweet
+          file extension? 3 letters and can be written
+          in hexadecimal as file signature 0xBEE. It
+          can then be followed by the type nibble 0-F.
+          A valid range of file sub types would then
+          be(e) from 0xBEE0 until 0xBEEF. Where do
+          bees live? Hexagons. Pretty magical, no?
 
-- GEAR     Game Emulation Architecture
-- PIMPLE   Platform Independent Media Preservation and Legacy Emulator
-- MENIMEM  My Extremly Naive Implementation of Emulators (Eminem might sue)
+- GEAR    Game Emulation Architecture
+
+- PIMPLE  Platform Independent Media Preservation and
+          Legacy Emulation (Now we're talking...)
+
+- MENIMEM My Extremly Naive Implementation of Emulators
+          (Eminem might sue but the name seems fitting)
 
 TODO: Stop thinking of stupid names.
 TODO: Documentation.
