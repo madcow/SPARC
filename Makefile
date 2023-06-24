@@ -6,27 +6,27 @@
 # build setup will change before public release.
 # TODO: Support Windows and MinGW.
 
-CC       := gcc
-LD       := $(CC)
-CFLAGS   := -ansi -pedantic -Wall -Wextra -Werror
-MDFLAGS   = -MM -MT $(@:.d=.o)
-CPPFLAGS  = -I$(SRCDIR)
-LDFLAGS  :=
-LDLIBS   :=
+CC       = gcc
+LD       = $(CC)
+CFLAGS   = -ansi -pedantic -Wall -Wextra -Werror
+MDFLAGS  = -MM -MT $(@:.d=.o)
+CPPFLAGS = -I$(SRCDIR)
+LDFLAGS  =
+LDLIBS   =
 
-VERBOSE  := false
-AUTORUN  := true
-SRCDIR   := src
-BINDIR   := bin
-TARGET   := bin/gas
-TMPDIR   := bin/build
-TESTD    := test -d
-MKDIR    := mkdir -p
-RM       := rm -rf
+VERBOSE := false
+AUTORUN := true
+SRCDIR  := src
+BINDIR  := bin
+TARGET  := bin/gas
+TMPDIR  := bin/build
+TESTD   := test -d
+MKDIR   := mkdir -p
+RM      := rm -rf
 
-SOURCES  := $(shell find $(SRCDIR) -name "*.c")
-OBJECTS  := $(SOURCES:%.c=$(TMPDIR)/%.o)
-DEPENDS  := $(SOURCES:%.c=$(TMPDIR)/%.d)
+SOURCES := $(shell find $(SRCDIR) -name "*.c")
+OBJECTS := $(SOURCES:%.c=$(TMPDIR)/%.o)
+DEPENDS := $(SOURCES:%.c=$(TMPDIR)/%.d)
 
 .PHONY: all
 all: $(TARGET)
@@ -41,7 +41,7 @@ $(TMPDIR)/%.o: %.c
 
 $(TMPDIR)/%.d: %.c
 	$(Q) $(TESTD) $(@D) || $(MKDIR) $(@D)
-	$(Q) $(CC) $(CPPFLAGS) $(MDFLAGS) $< -MF $@
+	$(E) $(CC) $(CPPFLAGS) $(MDFLAGS) $< -MF $@
 
 .PHONY: clean
 clean:
@@ -60,7 +60,8 @@ todo:
 	@echo "Comments marked TODO:"
 	@grep -r --exclude-dir=".git" \
 	         --exclude="Makefile" --exclude="*.swp" \
-	         TODO | cut --complement -d':' -f2 | column -ts ":"
+	         TODO | cut --complement -d':' -f2 | \
+	         column -ts ":"
 
 # The VERBOSE setting will supress
 # all command output and replace it
