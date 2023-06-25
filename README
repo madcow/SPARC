@@ -22,20 +22,20 @@ If you like to live dangerously you can use the command
 below to install the latest nightly build on your Linux
 system:
 
-  curl https://sparc.sh | sh
+    curl https://sparc.sh | sh
 
 The prefered way is to download the builds from the ftp
 server at ftp.sparc.sh and to verify checksums like so:
 
-  curl -O https://ftp.sparc.sh/latest.sha256
-  curl -L https://ftp.sparc.sh/latest.tar.gz | tar xz
-  sha256sum -c latest.sha256
+    curl -O https://ftp.sparc.sh/latest.sha256
+    curl -L https://ftp.sparc.sh/latest.tar.gz | tar xz
+    sha256sum -c latest.sha256
 
 Or if you want to build from source, you can use the
 git production server git.sparc.sh (for more info see
 section "Build on Linux"):
 
-  git clone git@git.sparc.sh
+    git clone git@git.sparc.sh
 
 # About the Project
 
@@ -77,8 +77,8 @@ can be set by passing --prefix to the configure script.
 (Sudo might be needed to install depending on the user
 permissions for the selected prefix).
 
-  configure
-  make && make install
+    configure
+    make && make install
 
 TODO: Win32 build documentation.
 
@@ -92,8 +92,8 @@ case the user has not set those values in their local
 file (or the file do not exist and the program does not
 have permissions to create it).
 
-  /etc/gas.cfg
-  /usr/gas/rom/
+    /etc/gas.cfg
+    /usr/gas/rom/
 
 ## User Files
 
@@ -102,9 +102,9 @@ Saves are packaged together for easier portability but
 can be exported back into the exact same format as on
 real hardware (to write on a memory card for example).
 
-  save.bee
-  conf.cfg
-  rom/
+    save.bee
+    conf.cfg
+    rom/
 
 TODO: Improve Linux documentation.
 TODO: Win32 file system documentation.
