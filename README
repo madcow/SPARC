@@ -32,6 +32,12 @@ server at ftp.sparc.sh and to verify checksums like so:
   curl -L https://ftp.sparc.sh/latest.tar.gz | tar xz
   sha256sum -c latest.sha256
 
+Or if you want to build from source, you can use the
+git production server git.sparc.sh (for more info see
+section "Build on Linux"):
+
+  git clone git@git.sparc.sh
+
 # About the Project
 
 SPARC is an unified emulation architecture. It handles
