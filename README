@@ -17,6 +17,22 @@ GNU assembler (If this overwrites your assembler config
 don't send me an angry email). Sources are published as
 soon as the first milestones are completed.
 
+# Quick Install
+
+If you like to live dangerously you can use the command
+below to install the latest nightly build on your Linux
+system:
+
+  curl https://sparc.sh | sh
+
+The prefered way is to download the builds from the ftp
+server at ftp.sparc.sh and to verify checksums using the
+sha256 file with the same name:
+
+  wget https://ftp.sparc.sh/latest.tar.gz
+  wget https://ftp.sparc.sh/latest.sha256
+  sha256sum -c latest.sha256
+
 # About the Project
 
 SPARC is an unified emulation architecture. It handles
