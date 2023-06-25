@@ -1,0 +1,39 @@
+# Firebee File Format
+
+This part of the documentation again goes into fever
+dream territory and you can safely just ignore it.
+
+FIREBEE (which stands for Format for Integrated Retro
+Emulation in a Better Engine Environment - I'm so sorry
+about the names) Files formatted in the firebee file
+format end with the .bee extension.
+
+# Header Description
+
+short  type      // Valid range from 0xBEE0-0xBEEF.
+short  flags     // Bitwise flags, compression, etc.
+int32  checksum  // Optional contents checksum.
+int32  unused    // Unused header field.
+int32  offset    // File index offset.
+
+# File Signature Types
+
+Below is the range of valid firebee file signatures.
+All numbers are listed in hexadecimal. Where do bees
+live? In hexagons. It all comes together here.
+
+0xBEE0  Unused
+..      Unused
+0xBEE9  Unused
+0xBEEA  Archive
+0xBEEB  Savegames
+0xBEEC  Config backup
+0xBEED  ROM Data backup
+0xBEEE  Emulation Cores
+0xBEEF  Emulation Tests
+
+There can be one 0xBEEA archive to contain all types of
+firebee files. So it is possible to export the library,
+savegames, config and everything else as a single file.
+
+TODO: Finish fabulous firebee file format documentation

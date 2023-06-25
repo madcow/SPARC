@@ -6,8 +6,7 @@
  |_____/|_| /_/    \_\_|  \_\\_____|
 
 GAS    Game Archive System running on the
-SPARC  Software Preservation Architecture for
-FIRE   Fully Integrated Retro Emulation
+SPARC  Software Preservation Architecture
 
 Written by Leon Krieg <info@madcow.dev>.
 Repository URL: https://git.sparc.sh
@@ -51,6 +50,7 @@ each gaming console. Emulation should be as accurate as
 possible while keeping the software simple to use. Most
 things should just work (TM) out of the box as long as
 the user provides their ROM backups for BIOS and games.
+GAS implements the FIREBEE file format see doc/FIREBEE.
 
 An important consideration is portability. Both in the
 binary sense and in regards to how easy it is for the
