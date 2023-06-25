@@ -7,9 +7,9 @@
 
 GAS    Game Archive System running on the
 SPARC  Software Preservation Architecture
-
-Written by Leon Krieg <info@madcow.dev>.
-Repository URL: https://git.sparc.sh
+       Implements the FIREBEE file format
+       Written in C for Windows and Linux
+       by Leon Krieg <info@madcow.dev>
 
 License undetermined right now. Not to be confused with
 GNU assembler (If this overwrites your assembler config
@@ -33,9 +33,11 @@ server at ftp.sparc.sh and to verify checksums like so:
 
 Or if you want to build from source, you can use the
 git production server git.sparc.sh (for more info see
-section "Build on Linux"):
+section "Build on Linux"). You can read the docs using
+telnet if you don't want to install the manpage files.
 
     git clone git@git.sparc.sh
+    telnet man.sparc.sh
 
 # About the Project
 
