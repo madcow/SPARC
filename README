@@ -26,8 +26,7 @@ system:
   curl https://sparc.sh | sh
 
 The prefered way is to download the builds from the ftp
-server at ftp.sparc.sh and to verify checksums using the
-sha256 file with the same name:
+server at ftp.sparc.sh and to verify checksums like so:
 
   wget https://ftp.sparc.sh/latest.tar.gz
   wget https://ftp.sparc.sh/latest.sha256
