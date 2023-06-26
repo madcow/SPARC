@@ -7,7 +7,6 @@
 
 GAS    Game Archive System running on the
 SPARC  Software Preservation Architecture
-       Implements the FIREBEE file format
        Written in C for Windows and Linux
        by Leon Krieg <info@madcow.dev>
 
