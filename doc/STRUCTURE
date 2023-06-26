@@ -1,0 +1,30 @@
+# Structure
+
+## General Project Structure
+TODO: Give overview of project structure.
+
+## Runtime Paths
+
+### Global Files
+
+The settings in /etc/gas.conf are overwritten by local
+user settings. They provide default config values in
+case the user has not set those values in their local
+file (or the file do not exist and the program does not
+have permissions to create it).
+
+    /etc/gas.cfg
+    /usr/gas/rom/
+
+### User Files
+
+Local user files are stored in ~/.local/.share/gas/.
+Saves are packaged together for easier portability but
+can be exported back into the exact same format as on
+real hardware (to write on a memory card for example).
+
+    save.bee
+    conf.cfg
+    rom/
+
+TODO: Write Win32 path documentation.
