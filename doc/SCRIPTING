@@ -1,0 +1,31 @@
+# Scripting
+
+GAS can be used to quickly edit, categorize and sort
+the users software archive. If the user has thumbnails
+on a ftp server it can download the matching ones.
+
+TODO: Command-line options.
+
+# Shell interpreter
+
+Gash shell interpreter allows the user to run multiple
+GAS commands from any given script file without having
+to prefix each of them with the program name. Just add
+the following shabang to your GASH script:
+
+    #!/usr/bin/gas -c
+    set use_xinput  false  # This can also be used to
+    set fullscreen  false  # make debugging shortcuts
+    set width       1024
+    set height      768
+
+    boot /bios/sys.dat
+    open /roms/rom.dat
+
+# RC File
+
+The .gasrc file is read before every execution and may
+contain commands mostly for emulation setup. It has the
+same format as the gash script above.
+
+TODO: Scripting documentation.
