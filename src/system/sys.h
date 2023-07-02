@@ -5,6 +5,15 @@ int     sp_sys_init(void);
 void    sp_sys_shutdown(int code);
 
 // ==============================================
+//   FILE SUBSYSTEM
+// ==============================================
+
+int     sp_sys_fs_open(const char *file, int flags);
+int     sp_sys_fs_read(int fd, void *buf, int n);
+int     sp_sys_fs_write(int fd, const void *buf, int n);
+void    sp_sys_fs_close(int fd);
+
+// ==============================================
 //   MEMORY SUBSYSTEM
 // ==============================================
 

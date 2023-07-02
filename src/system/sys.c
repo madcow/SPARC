@@ -9,6 +9,8 @@ int sp_sys_init(void)
 {
 	if (sp_sys_mem_init() < 0)
 		sp_sys_error(SP_ERR_INIT_MEMORY);
+	if (sp_sys_fs_init() < 0)
+		sp_sys_error(SP_ERR_INIT_FILES);
 	if (sp_sys_input_init() < 0)
 		sp_sys_error(SP_ERR_INIT_INPUT);
 	if (sp_sys_render_init() < 0)

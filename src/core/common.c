@@ -1,7 +1,8 @@
 #include "core/core.h"
 #include <stdio.h>
 
-static char sp_error_msg[][256] = {
+static char sp_error_msg[][128] = {
+// expand error message x-macro
 #define E(_, str) str,
 #include "core/errors.inc.h"
 #undef E
