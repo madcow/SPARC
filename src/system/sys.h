@@ -22,7 +22,7 @@ void    sp_sys_input_show_mouse(bool show);
 //   MEMORY SUBSYSTEM
 // ==============================================
 
-void    sp_sys_error(const char *fmt, ...);
+void    sp_sys_error(int errno);
 
 // ==============================================
 //   MEMORY SUBSYSTEM

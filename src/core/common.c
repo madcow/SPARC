@@ -1,6 +1,12 @@
 #include "core/core.h"
 #include <stdio.h>
 
+static char sp_error_msg[][256] = {
+#define E(_, str) str,
+#include "core/errors.inc.h"
+#undef E
+};
+
 int sp_com_init(void)
 {
 	return 0;
@@ -29,20 +35,22 @@ void sp_com_debug(const char *fmt, ...)
 {
 	va_list ap;
 
+	// TODO: different output streams
+
 	va_start(ap, fmt);
 	printf("Debug: ");
 	vprintf(fmt, ap);
 	va_end(ap);
 }
 
-// Use sp_sys_error for fatal errors
-void sp_com_error(const char *fmt, ...)
+// use sp_sys_error for fatal errors
+void sp_com_error(int errno)
 {
-	va_list ap;
+	if (errno < 0 || errno >= SP_MAX_ERRNO)
+		errno = SP_ERR_UNKNOWN;
 
-	va_start(ap, fmt);
-	printf("Error: ");
-	vprintf(fmt, ap);
-	va_end(ap);
+	// TODO: different output streams
+	// TODO: take variable arguments
+
+	printf("Error: %s.\n", sp_error_msg[errno]);
 }
-

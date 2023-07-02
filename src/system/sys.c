@@ -8,31 +8,21 @@
 int sp_sys_init(void)
 {
 	if (sp_sys_mem_init() < 0)
-		sp_sys_error("Cannot initialize memory");
-
+		sp_sys_error(SP_ERR_INIT_MEMORY);
 	if (sp_sys_input_init() < 0)
-		sp_sys_error("Cannot initialize input");
-
+		sp_sys_error(SP_ERR_INIT_INPUT);
 	if (sp_sys_render_init() < 0)
-		sp_sys_error("Cannot initialize graphics");
-
+		sp_sys_error(SP_ERR_INIT_RENDER);
 	if (sp_sys_audio_init() < 0)
-		sp_sys_error("Cannot initialize audio");
+		sp_sys_error(SP_ERR_INIT_AUDIO);
 
 	return 0;
 }
 
-void sp_sys_error(const char *fmt, ...)
+void sp_sys_error(int errno)
 {
-	va_list ap;
-	char msg[4096];
-
-	va_start(ap, fmt);
-	vsprintf(msg, fmt, ap);
-	va_end(ap);
-
-	sp_com_error(msg);
-	sp_sys_shutdown(1);
+	sp_com_error(errno);
+	sp_sys_shutdown(EXIT_FAILURE);
 }
 
 void sp_sys_shutdown(int code)
@@ -58,7 +48,7 @@ void *sp_sys_mem_alloc(int size)
 	ptr = malloc ((size_t) size);
 
 	if (ptr == NULL)
-		sp_sys_error("Out of memory");
+		sp_sys_error(SP_ERR_NOMEM);
 
 	return ptr;
 }
