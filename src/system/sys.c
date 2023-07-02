@@ -34,6 +34,8 @@ void sp_sys_shutdown(int code)
 	sp_sys_audio_shutdown();
 	sp_sys_mem_shutdown();
 
+	sp_com_shutdown();
+
 	exit(code);
 }
 

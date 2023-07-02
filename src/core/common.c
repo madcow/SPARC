@@ -10,6 +10,8 @@ static char sp_error_msg[][128] = {
 
 int sp_com_init(void)
 {
+	sp_event_init();
+
 	return 0;
 }
 
@@ -54,4 +56,9 @@ void sp_com_error(int errno)
 	// TODO: take variable arguments
 
 	printf("Error: %s.\n", sp_error_msg[errno]);
+}
+
+void sp_com_shutdown(void)
+{
+	sp_event_shutdown();
 }

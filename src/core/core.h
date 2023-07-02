@@ -16,6 +16,7 @@ int   sp_com_read_args(int argc, char **argv);
 int   sp_com_read_conf(const char *filename);
 void  sp_com_debug(const char *fmt, ...);
 void  sp_com_error(int errno);
+void  sp_com_shutdown(void);
 
 enum sp_errno_e {
 // expand error message x-macro

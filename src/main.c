@@ -4,12 +4,13 @@
 int main(int argc, char **argv)
 {
 	sp_com_init();
+
 	sp_com_read_args(argc, argv);
 	sp_com_read_conf("conf.cfg");
 
 	sp_sys_init();
-	sp_com_error(SP_ERR_NOT_TOASTER);
 
+	sp_com_error(SP_ERR_NOT_TOASTER);
 	sp_sys_shutdown(0);
 
 	return 0;
