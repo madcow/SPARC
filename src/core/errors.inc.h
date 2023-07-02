@@ -1,4 +1,4 @@
-// Error messages
+// error messages
 
 E( NOMEM,        "Out of memory")
 E( UNKNOWN,      "Something bad happened")
