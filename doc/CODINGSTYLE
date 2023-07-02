@@ -1,7 +1,9 @@
 # Coding Style
 
-- Function blocks start on separate line (K&R)
-- Multi-line comments, no single line from C99
+- C99 single line comments are fine
+- Function blocks start on separate lines (K&R)
+- Functions return negative values for errors
+- Const pointer arguments whenever possible
 - Short names for local variables
 - Descriptive names when global variables are necessary
 - Maximum Line width (can be exceeded if helps clarity)
