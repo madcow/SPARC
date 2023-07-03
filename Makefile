@@ -5,12 +5,13 @@
 # Basic Makefile for development on Linux. This
 # build setup will change before public release.
 # TODO: Fix redundancies for unit test targets.
+# TODO: Don't intermingle core headers with unit tests.
 # TODO: Static file list instead of shell-find.
 # TODO: Improve POSIX compatiblity?
 # TODO: Support Windows and MinGW.
 
 # ====================================================
-# Compiler
+# Settings
 # ====================================================
 
 CC       = gcc
@@ -20,10 +21,6 @@ CPPFLAGS = -I$(SRCDIR) -I$(TESTDIR)
 MDFLAGS  = -MM -MT $(@:.d=.o)
 LDLIBS   =
 LDFLAGS  =
-
-# ====================================================
-# General settings
-# ====================================================
 
 VERBOSE := false
 AUTORUN := true
