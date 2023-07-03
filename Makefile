@@ -22,7 +22,7 @@ LDLIBS   =
 LDFLAGS  =
 
 # ====================================================
-# General Settings
+# General settings
 # ====================================================
 
 VERBOSE := false
@@ -38,7 +38,7 @@ MKDIR   := mkdir -p
 RM      := rm -rf
 
 # ====================================================
-# Core Files
+# Core files
 # ====================================================
 
 SOURCES := $(shell find $(SRCDIR) -name "*.c")
@@ -46,7 +46,7 @@ OBJECTS := $(SOURCES:%.c=$(TMPDIR)/%.o)
 DEPENDS := $(SOURCES:%.c=$(TMPDIR)/%.d)
 
 # ====================================================
-# Unit Tests
+# Unit tests
 # ====================================================
 
 LDTEST  := $(LDLIBS)
