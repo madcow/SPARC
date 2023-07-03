@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 static char sp_error_msg[][128] = {
-// expand error message x-macro
 #define E(_, str) str,
 #include "core/errors.inc.h"
 #undef E
@@ -29,6 +28,14 @@ int sp_com_read_conf(const char *filename)
 {
 	// TODO: parse config file
 
+	UNUSED(filename);
+
+	return 0;
+}
+
+int sp_com_exec_file(const char *filename)
+{
+	// TODO: run script file
 	UNUSED(filename);
 
 	return 0;

@@ -1,6 +1,10 @@
-arch gg # Game Gear
-boot /bios/bios.gg
+# Game Gear
+# Debug RC
 
-open /roms/test1.gg
-open /roms/test2.gg
-open /roms/test3.gg
+arch gg # same as "sms"
+boot /doc/roms/bios.gg
+
+# Autorun testing roms
+open /doc/roms/rom1.gg
+open /doc/roms/rom2.gg
+open /doc/roms/rom3.gg
