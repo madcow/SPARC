@@ -138,3 +138,4 @@ endif
 # changes trigger recompilation
 
 include $(wildcard $(DEPENDS))
+include $(wildcard $(TESTDEP))
