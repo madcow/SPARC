@@ -70,6 +70,34 @@ SPARC runs on Windows and Linux either natively or with
 SDL2. Maybe Android and Xbox can be supported later.
 Porting should be fairly straightforward.
 
+# Command-line
+
+GAS has a simple command-line interface which can also
+be used to do some game library housekeeping. See
+doc/SCRIPTING for more info.
+
+    gas [options] [rom-file ..]
+
+## Options
+
+    -s, --set <key> <value>
+        Sets variable to specified value. Has priority
+        over any values set in the config file.
+
+    -a, --arch <architecture>
+        Sets emulation architecture.
+
+    -b, --boot <bios-file>
+        Boots given BIOS file.
+
+    -o, --open <rom-file>
+        Loads given ROM file. Can be omitted by listing
+        the files after any command-line options. If
+        none are given the user library is shown.
+
+    -v, --version
+        Prints installed version.
+
 # Build on Linux
 
 To build and install this project run the following

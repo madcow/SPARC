@@ -1,4 +1,42 @@
-# Scripting
+# Command-line
+
+gas [options] [rom-file ..]
+
+## Options
+
+    -s, --set {key} {value}
+        Sets variable to given value. Has priority
+        over any values set in the config file.
+
+    -a, --arch <architecture>
+        Sets emulation architecture.
+
+    -b, --boot {bios-file}
+        Boots given bios-file.
+
+    -o, --open {rom-file}
+        Loads given rom-file. Can be omitted by listing
+        the ROM files after the command-line options.
+        If none are given the user library is shown.
+
+    -v, --version
+        Prints installed version.
+
+## Test cases
+
+    gas
+    gas file.bin
+    gas -a sms file.bin /roms/sms/*
+    gas -s foo /dev/null file.bin
+    gas -s foo false -- --not-parsed-as-option
+    gas -s foo false -s bar '1024' -s baz "768"
+    gas -s foo=false -s bar='1024' -s baz="768"
+
+TODO: Any parsing edge cases?
+TODO: Write proper unit-tests
+TODO: More command-line options
+
+# User Scripting
 
 GAS can be used to quickly edit, categorize and sort
 the users software archive. If the user has thumbnails
@@ -19,8 +57,9 @@ the following shabang to your GASH script:
     set width       1024
     set height      768
 
-    boot /bios/sys.dat
-    open /roms/rom.dat
+    arch gg
+    boot /bios/sys.bin
+    open /roms/rom.bin
 
 # RC File
 
