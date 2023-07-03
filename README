@@ -26,8 +26,8 @@ system:
 The prefered way is to download the builds from the ftp
 server at ftp.sparc.sh and to verify checksums like so:
 
-    curl -sOL https://ftp.sparc.sh/latest.sha256
-    curl -sSL https://ftp.sparc.sh/latest.tar.gz | tar xz
+    curl -sO https://ftp.sparc.sh/latest.sha256
+    curl -sS https://ftp.sparc.sh/latest.tar.gz | tar xz
     sha256sum -c latest.sha256
 
 Or if you want to build from source, you can use the
