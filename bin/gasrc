@@ -1,18 +1,15 @@
 # Startup script
 # for GG/SMS debug
 
+# Game Gear
 arch gg
 boot /rom/bios.gg
+open /rom/gg-opcodes.gg
+open /rom/gg-vdptest.gg
+open /rom/gg-psgtest.gg
 
-# Game Gear tests
-open /rom/gg-rom1.gg
-open /rom/gg-rom2.gg
-open /rom/gg-rom3.gg
-
+# Master System
 arch sms
 boot /rom/bios.sms
-
-# Master System tests
-open /rom/sms-rom1.sms
-open /rom/sms-rom2.sms
-open /rom/sms-rom3.sms
+open /rom/ms-vdptest.sms
+open /rom/ms-psgtest.sms
