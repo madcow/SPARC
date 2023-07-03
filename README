@@ -21,7 +21,7 @@ If you like to live dangerously you can use the command
 below to install the latest nightly build on your Linux
 system:
 
-    curl https://sparc.sh | sh
+    curl -sSL https://sparc.sh | sh
 
 The prefered way is to download the builds from the ftp
 server at ftp.sparc.sh and to verify checksums like so:
