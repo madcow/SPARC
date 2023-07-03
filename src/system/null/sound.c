@@ -7,6 +7,10 @@ int sp_sys_audio_init(void)
 	return 0;
 }
 
+void sp_sys_audio_update(void)
+{
+}
+
 void sp_sys_audio_shutdown(void)
 {
 }
