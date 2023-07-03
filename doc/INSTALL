@@ -6,7 +6,7 @@ If you like to live dangerously you can use the command
 below to install the latest nightly build on your Linux
 system:
 
-    curl https://sparc.sh | sh
+    curl -sSL https://sparc.sh | sh
 
 ## Install via FTP
 
