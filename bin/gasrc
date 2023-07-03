@@ -1,0 +1,6 @@
+arch gg # Game Gear
+boot /bios/bios.gg
+
+open /roms/test1.gg
+open /roms/test2.gg
+open /roms/test3.gg
