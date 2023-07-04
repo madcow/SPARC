@@ -122,10 +122,10 @@ doc/SCRIPTING for more info.
 
 ## Config File
 
-The global settings file is /etc/gas.cfg. By default any
-user settings are kept in $USER/.config/gas/gas.cfg. If
-you prefer to keep all files in a seperate directory from
-the user home you can set rootdir in your config like so:
+The global settings file is /etc/gas.cfg. By default the
+user overwrites can be found in $HOME/.gas/user.cfg. If
+you would rather keep files seperate from user homes you
+can set rootdir in the global config like so:
 
     rootdir = /tmp/gas/
 
@@ -136,12 +136,14 @@ simply either the end of line or the start of a comment.
 Strings are considered everything that is not a number
 and not a boolean value.
 
-    romdir      = /rom/  # relative to rootdir if set
-    loglevel    = debug  # debug, info, warning, error
-    fullscreen  = false  # small window for debugging
-    xinput      = true   # enable controller input
-    width       = 640
-    height      = 480
+    portable     = true      # See "File Paths" section
+    loglevel     = debug     # debug, info, warning, error
+    biosdir      = /bios/    # BIOS dir relative to rootdir
+    romdir       = /roms/    # ROM dir relative to rootdir
+    xinput       = true      # Handle controller input
+    fullscreen   = false     # Small debug window
+    width        = 640
+    height       = 480
 
 The settings in /etc/gas.conf are overwritten by local
 user settings. They provide default config values in
@@ -165,35 +167,49 @@ when starting GAS:
 
 TODO: Script format info.
 
-# File Structure
+# File Paths
 
-File structure depends on if rootdir is set to a value
-other than the user home path.
+Note that all the paths can be changed from the global
+config file. If there is no gas.cfg in the same folder
+as the executable then the path is /etc/gas.cfg.
 
-## Global Files
+    /etc/gas.cfg      # Global settings
+    /usr/gas/rom      # Shared ROM files
+    $HOME/.gas/
+        /gasrc        # Local RC file
+        /user.cfg     # Local settings
+        /saves.bee    # Save games
+        /bios/        # BIOS files
+        /roms/        # ROM files
 
-See section "Settings" for more info on gas.cfg.
+## Portable setup
 
-FIXME: Add more info or remove this section since it
-is redundant with the "Settings" section and the ROM
-directory can be set freely in the config file.
+If you enable the setting to package user data you only
+need to move around 3-4 files. Use the following command
+to create a portable install in /tmp/gas:
 
-    /etc/gas.cfg
-    /usr/gas/rom/
+    export DIR=/tmp/gas
+    install -d 0755 $DIR
+    install -m 0755 /usr/bin/gas $DIR
+    cat <<EOF > $DIR/gas.cfg
+        portable = true
+        packuser = true
+        userfile = gas.bee
+        rootdir  = .
+    EOF
 
-## User Files
+Run GAS once from the new directory and it should have
+created the structure below. Add your user settings to
+gas.cfg and you could move this folder to an USB drive.
 
-Local user files are stored in ~/.local/.share/gas/.
-Saves are packaged together for easier portability but
-can be exported back into the exact same format as on
-real hardware (to write on a memory card for example).
+    /tmp/gas
+        /gas.cfg    # Settings file as created above.
+        /gas.bee    # User bios, roms and save games.
+        /gasrc      # Startup script, can be deleted.
+        /gas        # Binaries for different systems.
 
-    save.bee
-    conf.cfg
-    rom/
-
-TODO: Improve Linux documentation.
-TODO: Win32 file system documentation.
+TODO: Windows path documentation.
+TODO: Improve Linux path docs.
 
 # Milestones
 
