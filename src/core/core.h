@@ -13,8 +13,8 @@
 
 int   sp_com_init(void);
 int   sp_com_read_args(int argc, char **argv);
-int   sp_com_read_conf(const char *filename);
-int   sp_com_exec_file(const char *filename);
+int   sp_com_read_config(const char *filename);
+int   sp_com_exec_script(const char *filename);
 void  sp_com_debug(const char *fmt, ...);
 void  sp_com_error(int errno);
 void  sp_com_shutdown(void);

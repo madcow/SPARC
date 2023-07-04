@@ -30,13 +30,30 @@ server at ftp.sparc.sh and to verify checksums like so:
     curl -sS https://ftp.sparc.sh/latest.tar.gz | tar xz
     sha256sum -c latest.sha256
 
-Or if you want to build from source, you can use the
-git production server git.sparc.sh (for more info see
-section "Build on Linux"). You can read the docs using
-telnet if you don't want to install the manpage files.
+# Build from Source
+
+You can get the latest sources from the git repository
+at git.sparc.sh. There is a telnet manpage server if you
+don't want to install the docs locally. See the next two
+sections on how to proceed with the build.
 
     git clone git@git.sparc.sh
     telnet man.sparc.sh
+
+## Linux Build
+
+On your first build you need to run the configure script
+to detect your toolchain. You can pass the --prefix=path
+argument to change the installation path. Depending on
+your selected prefix you might need sudo to install.
+
+    cd sparc
+    ./configure --prefix=/usr
+    make && make install
+
+## Windows Build
+
+TODO: Windows build documentation.
 
 # About the Project
 
@@ -70,15 +87,20 @@ SPARC runs on Windows and Linux either natively or with
 SDL2. Maybe Android and Xbox can be supported later.
 Porting should be fairly straightforward.
 
-# Command-line
+# Settings
+
+There are three ways in which you can change how the
+emulator runs: command-line, config files and the RC
+startup script. (Well and a graphical menu later but
+that is just an extension of the config file.)
+
+## Command-line
 
 GAS has a simple command-line interface which can also
 be used to do some game library housekeeping. See
 doc/SCRIPTING for more info.
 
     gas [options] [rom-file ..]
-
-## Options
 
     -s, --set <key> <value>
         Sets variable to specified value. Has priority
@@ -98,28 +120,63 @@ doc/SCRIPTING for more info.
     -v, --version
         Prints installed version.
 
-# Build on Linux
+## Config File
 
-To build and install this project run the following
-commands. gcc and make are required. A different prefix
-can be set by passing --prefix to the configure script.
-(Sudo might be needed to install depending on the user
-permissions for the selected prefix).
+The global settings file is /etc/gas.cfg. By default any
+user settings are kept in $USER/.config/gas/gas.cfg. If
+you prefer to keep all files in a seperate directory from
+the user home you can set rootdir in your config like so:
 
-    configure
-    make && make install
+    rootdir = /tmp/gas/
 
-TODO: Win32 build documentation.
+Comments start with the hash symbol. Strings don't have
+to be quoted unless you're using the hash symbol as part
+of the value. Values start after the equals symbol until
+simply either the end of line or the start of a comment.
+Strings are considered everything that is not a number
+and not a boolean value.
 
-# File Structure
-
-## Global Files
+    romdir      = /rom/  # relative to rootdir if set
+    loglevel    = debug  # debug, info, warning, error
+    fullscreen  = false  # small window for debugging
+    xinput      = true   # enable controller input
+    width       = 640
+    height      = 480
 
 The settings in /etc/gas.conf are overwritten by local
 user settings. They provide default config values in
 case the user has not set those values in their local
 file (or the file do not exist and the program does not
 have permissions to create it).
+
+## Startup RC Script
+
+Startup scripts are most useful for debug purposes and
+also nice for creating small housekeeping scripts. By
+default the script .gasrc in the user directory is run
+when starting GAS:
+
+    arch gg
+    boot gg-bios.gg
+    open gg-shinobi.gg
+    arch gb
+    boot gb-bios.sms
+    open gb-aladdin.sms
+
+TODO: Script format info.
+
+# File Structure
+
+File structure depends on if rootdir is set to a value
+other than the user home path.
+
+## Global Files
+
+See section "Settings" for more info on gas.cfg.
+
+FIXME: Add more info or remove this section since it
+is redundant with the "Settings" section and the ROM
+directory can be set freely in the config file.
 
     /etc/gas.cfg
     /usr/gas/rom/
@@ -147,6 +204,7 @@ TODO: Win32 file system documentation.
 ## Game Boy (including Color and Advance)
 ## NES / SNES
 
+TODO: Split up big milestones into smaller ones.
 TODO: Document necessary steps for each milestone.
 
 # Name Ideas

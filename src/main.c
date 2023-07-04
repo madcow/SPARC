@@ -7,10 +7,10 @@ int main(int argc, char **argv)
 	sp_sys_init();
 
 	sp_com_read_args(argc, argv);
-	sp_com_read_conf("gas.cfg");
-	sp_com_exec_file("gasrc");
-	sp_com_error(SP_ERR_NOT_TOASTER);
+	sp_com_read_config("gas.cfg");
+	sp_com_exec_script("gasrc");
 
+	sp_com_error(SP_ERR_NOT_TOASTER);
 	sp_sys_shutdown(0);
 
 	return 0;
