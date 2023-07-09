@@ -1,17 +1,29 @@
+# The webserver should just pull the repository nightly
+# but this workaround is necessary until I can implement
+# it server side
+
 on:
   push:
     branches:
     - main
 
 jobs:
-  update-docs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      docs: ${{ steps.changes.outputs.docs }}
     steps:
     - uses: actions/checkout@v3
     - uses: dorny/paths-filter@v2
       id: changes
       with:
         filters: |
-          src:
+          docs:
             - 'README'
-    - name: update-website
-    - run: echo "TODO: Push README to FTP server"
+  docs:
+    needs: changes
+    if: ${{ needs.changes.outputs.docs == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: true
