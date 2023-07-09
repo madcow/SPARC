@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  update-docs:
+    steps:
+    - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        filters: |
+          src:
+            - 'README'
+    - name: update-website
+    - run: echo "TODO: Push README to FTP server"

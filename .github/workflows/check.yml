@@ -1,5 +1,7 @@
-on: push
-name: check
+on:
+  push:
+    branches:
+    - main
 jobs:
   check:
     runs-on: ubuntu-latest
